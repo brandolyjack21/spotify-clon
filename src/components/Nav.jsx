@@ -2,6 +2,9 @@ import React from 'react'
 
 function Nav() {
   return (
+
+    <header>
+
     <nav className='nav'>
       <div className='nav-logo'>
         <span className='logo'>
@@ -22,6 +25,7 @@ function Nav() {
         </ul>
       </div>
     </nav>
+    </header>
   )
 }
 

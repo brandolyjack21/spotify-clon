@@ -1,11 +1,16 @@
 import React from 'react'
 import { useState } from 'react'
+import Nav from './Nav'
 
-function Home() {
+const  Home = () => {
 
   const [ rotateTransition, setRotateTransition ] = useState(false)
   return (
+    
     <section className='container-home'>
+
+      <Nav/>
+     
       <div className='container-spotify-title'>
         <h1>
             Spotify
