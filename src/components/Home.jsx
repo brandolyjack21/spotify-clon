@@ -1,11 +1,41 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 
 function Home() {
 
   const [ rotateTransition, setRotateTransition ] = useState(false)
+  const [ count , setCount ] = useState(0)
+
+  useEffect(() => {
+
+    const addGridBackground = document.getElementById('grid-background')
+
+    if (addGridBackground) {
+      
+    let countElementWidth = addGridBackground.offsetWidth / 10
+    let countElement = addGridBackground.offsetHeight / countElementWidth
+    let countElementTotal = countElement * 20
+      setCount(countElement)
+      for (let index = 0; index < countElementTotal ; index++) {
+       const newElement = document.createElement('div')
+       newElement.classList.add('divGridBackground')
+       newElement.style.width = `${ countElementWidth }px`
+       newElement.style.height = `${ countElementWidth }px`
+       addGridBackground.appendChild(newElement);
+      }
+    }
+        
+  },[])
+
+
   return (
-    <section className='container-home'>
+    <>
+      <div id='grid-background' className='grid-background'>
+      {
+        
+      }
+      </div>
+      <section className='container-home'>
       <div className='container-spotify-title'>
         <div className='container-search-music'>
           <input className='input-search-music' id='search-music' type="text" />
@@ -29,6 +59,7 @@ function Home() {
 
       </div>
     </section>
+    </>
   )
 }
 

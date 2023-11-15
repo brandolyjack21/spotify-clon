@@ -188,6 +188,8 @@ img{
   align-items: center;
   justify-content: center;
   padding: 0 20px;
+  position: relative;
+  z-index: 99;
 }
 
 .input-search-music{
@@ -292,6 +294,27 @@ img{
   100%{
     transform: rotate(360deg);
   }
+}
+
+.grid-background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  place-items: center;
+  color: white;
+  overflow: hidden;
+}
+
+.divGridBackground{
+  border-right: solid 1px #2f3030;
+  border-bottom: solid 1px #2f3030;
 }
 
 
