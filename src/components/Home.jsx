@@ -12,7 +12,7 @@ function Home() {
 
     if (addGridBackground) {
       
-    let countElementWidth = addGridBackground.offsetWidth / 10
+    let countElementWidth = addGridBackground.offsetWidth / 15
     let countElement = addGridBackground.offsetHeight / countElementWidth
     let countElementTotal = countElement * 20
       setCount(countElement)
@@ -27,13 +27,36 @@ function Home() {
         
   },[])
 
+  const shadeGridBackground = (e) => {
+
+    const shadeDiv = document.getElementById('shade-grid-background');
+      
+      const mouseX = e.clientX 
+      const mouseY = e.clientY
+
+      const gradientSize = 500
+
+      const percentageX = (mouseX / window.innerWidth) * 100
+      const percentageY = (mouseY / window.innerHeight) * 100
+
+      const gradient = `radial-gradient(circle ${gradientSize}px at ${percentageX}% ${percentageY}%, transparent, black)`
+
+      shadeDiv.style.background = gradient
+
+  }
+
+  const blackBackground = () => {
+    const shadeDiv = document.getElementById('shade-grid-background');
+    shadeDiv.style.background = black
+  }
+
 
   return (
     <>
       <div id='grid-background' className='grid-background'>
-      {
-        
-      }
+        <div onMouseMove={(e) => shadeGridBackground(e)} onMouseLeave={blackBackground} id='shade-grid-background' className='shade-grid-background'>
+
+        </div>
       </div>
       <section className='container-home'>
       <div className='container-spotify-title'>
